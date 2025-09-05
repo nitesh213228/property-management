@@ -1,109 +1,363 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>Scroll Trigger Counter</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: sans-serif;
-    }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>property management</title>
 
-    .spacer {
-      height: 100vh; /* Scroll karne ke liye upar space */
-      background-color: #eee;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
+    <link rel="stylesheet" href="./sytle.css" />
+    <link rel="stylesheet" href="./ meadia-query.css" />
+  </head>
 
-    .option {
-      display: flex;
-      background-color: #fbeced;
-      justify-content: center;
-      padding: 100px;
-      margin: 0 auto;
-    }
-
-    .body {
-      margin: 0 50px;
-      text-align: center;
-    }
-
-    .body h1 {
-      font-size: 50px;
-    }
-
-    .body p {
-      font-size: 20px;
-      font-weight: bold;
-      margin-top: 10px;
-    }
-  </style>
-</head>
-<body>
-
-  <div class="spacer">
-    <h2>Scroll Down to See Counter</h2>
-  </div>
-
-  <div class="option" id="counter-section">
-    <div class="body">
-      <h1 id="six">0k</h1>
-      <p>Award Winning</p>
+  <body>
+    <!--first component-->
+    <div class="navbar">
+      <ul>
+        <li class="link-lists" target="_parent">
+          <a href="home.html">Home</a>
+        </li>
+        <li class="link-lists"><a href="landing.html">Landing</a></li>
+        <li class="link-lists"><a href="about.html">About</a></li>
+        <li class="link-lists"><a href="team.html">Team</a></li>
+        <li class="link-lists"><a href="gallery.html">Gallery</a></li>
+        <li class="link-lists"><a href="contact.html">Contact</a></li>
+      </ul>
     </div>
-    <div class="body">
-      <h1 id="six1">0k</h1>
-      <p>Property Ready</p>
+
+    <!--second component-->
+
+    <div class="title">
+      <h1>Easy Way to Find a Perfect Property</h1>
+      <p>Sample text. Click to select the Text Element.</p>
+      <h6>Image from</h6>
+      <div class="about">
+        <form class="form-container" id="emailForm">
+          <label for="email"></label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Enter a valid email address"
+            required
+          />
+
+          <button type="submit">Submit</button>
+          <p id="thankYouMessage" style="display: none">
+            Thank you! Your message has been sent.<button
+              type="button"
+              id="back"
+            >
+              x
+            </button>
+          </p>
+        </form>
+      </div>
     </div>
-    <div class="body">
-      <h1 id="six2">0m</h1>
-      <p>Happy Customer</p>
+
+    <!--third component-->
+
+    <div class="gallery-wrap">
+      <img src="image/back.png" id="backbtn" />
+      <div class="gallery">
+        <span>
+          <img src="./image/pexels-photo-532568.jpeg" />
+          <h1>Paris</h1>
+          <p>10 Property</p>
+        </span>
+        <span>
+          <img src="./image/pexels-photo-325185.jpeg" />
+          <h1>New York</h1>
+          <p>40 Property</p>
+        </span>
+        <span>
+          <img src="./image/pexels-photo-1115804.jpeg" />
+          <h1>Los Angeles</h1>
+          <p>34 Property</p>
+        </span>
+        <span>
+          <img src="./image/pexels-photo-1029615.jpeg" />
+          <h1>Chicago</h1>
+          <p>20 Property</p>
+        </span>
+        <span>
+          <img src="./image/pexels-photo-2090651.jpeg" />
+          <h1>Verona</h1>
+          <p>60 Property</p>
+        </span>
+        <span>
+          <img src="./image/pexels-photo-1769369.jpeg" />
+          <h1>Tokio</h1>
+          <p>56 Property</p>
+        </span>
+        <span>
+          <img src="./image/pexels-photo-3855622.jpeg" />
+          <h1>Pekin</h1>
+          <p>60 Property</p>
+        </span>
+      </div>
+      <img src="image/next.png" id="nextbtn" />
     </div>
-  </div>
 
-  <div class="spacer"></div>
+    <!-- fourth Box Part -->
 
-  <script>
-    let hasAnimated = false;
+    <div class="charset">
+      <h1>Properties For Rent</h1>
+      <p>Image from</p>
+      <button type="submit">view more</button>
+    </div>
 
-    function startCounting() {
-      const six = document.getElementById("six");
-      for (let i = 1; i <= 20; i++) {
-        setTimeout(() => {
-          six.innerHTML = i + "k";
-        }, i * 100);
-      }
+    <div class="main">
+      <div class="box1">
+        <div class="box1-innerbox">
+          <h5>$ 250</h5>
+          <p>Sample text click to select</p>
+        </div>
+      </div>
+      <div class="box2">
+        <img src="./image/house-isolated-field.jpg" alt="" />
+        <div class="box2-innerbox">
+          <h5>$ 550</h5>
+          <p>Sample text click to select</p>
+        </div>
+      </div>
+      <div class="box3">
+        <div class="box3-innerbox">
+          <h5>$ 350</h5>
+          <p>Sample text click to select</p>
+        </div>
+      </div>
+    </div>
 
-      const six1 = document.getElementById("six1");
-      for (let i = 1; i <= 14; i++) {
-        setTimeout(() => {
-          six1.innerHTML = i + "k";
-        }, i * 140);
-      }
+    <div class="main1">
+      <div class="box1">
+        <div class="box1-innerbox">
+          <h5>$ 2500</h5>
+          <p>Sample text click to select</p>
+        </div>
+      </div>
+      <div class="box2">
+        <div class="box2-innerbox">
+          <h5>$ 1450</h5>
+          <p>Sample text click to select</p>
+        </div>
+      </div>
+      <div class="box3">
+        <div class="box3-innerbox">
+          <h5>$ 150</h5>
+          <p>Sample text click to select</p>
+        </div>
+      </div>
+    </div>
 
-      const six2 = document.getElementById("six2");
-      for (let i = 0; i <= 2; i++) {
-        setTimeout(() => {
-          six2.innerHTML = i + "m";
-        }, i * 1000);
-      }
-    }
+    <!-- five part -->
 
-    // Scroll-based trigger without IntersectionObserver
-    window.addEventListener("scroll", () => {
-      const section = document.getElementById("counter-section");
-      const position = section.getBoundingClientRect();
+    <div class="paris">
+      <div class="paris1">
+        <h1>Let’s Find The Right Selling Option</h1>
+        <h3>Image from</h3>
 
-      // Check if element is visible in viewport
-      if (position.top < window.innerHeight && position.bottom >= 0) {
-        if (!hasAnimated) {
-          startCounting();
-          // hasAnimated = false;
-        }
-      }
-    });
-  </script>
+        <div class="part1">
+          <div class="left">
+            <img src="./image/bulb.png" alt="" />
+          </div>
+          <div class="right">
+            <h2>Property Management</h2>
+            <p>Sample text. Click to select the Text Element.</p>
+          </div>
+        </div>
 
-</body>
+        <div class="part2">
+          <div class="left">
+            <img src="./image/setting.png" alt="" />
+          </div>
+          <div class="right">
+            <h2>Mortgage Services</h2>
+            <p>Sample text. Click to select the Text Element.</p>
+          </div>
+        </div>
+
+        <div class="part3">
+          <div class="left">
+            <img src="./image/check.png" alt="" />
+          </div>
+          <div class="right">
+            <h2>Currency Services</h2>
+            <p>Sample text. Click to select the Text Element.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="paris2">
+        <img src="./image/pexels-freestockpro-7599735.jpg" alt="" />
+      </div>
+    </div>
+
+    <!-- six part -->
+
+    <div class="option" id="counter-section">
+      <div class="body">
+        <h1 id="six"></h1>
+        <p>Award Winning</p>
+      </div>
+      <div class="body">
+        <h1 id="six1"></h1>
+        <p>Property Ready</p>
+      </div>
+      <div class="body">
+        <h1 id="six2"></h1>
+        <p>Happy Customer</p>
+      </div>
+    </div>
+
+    <!-- sevan part  -->
+
+    <div class="valid">
+      <h1>Explore Apartment Types</h1>
+      <p>Image from</p>
+      <button type="submit">view more</button>
+    </div>
+
+    <!-- eghit part -->
+
+    <div class="way">
+      <div class="tabal">
+        <img src="./image/pexels-photo-532568.jpeg" alt="" />
+        <h2>Office</h2>
+      </div>
+
+      <div class="tabal">
+        <img src="./image/house-isolated-field1.jpg" alt="" />
+        <h2>House</h2>
+      </div>
+
+      <div class="tabal">
+        <img
+          src="./image/low-angle-shot-facade-white-modern-building-blue-clear-sky.jpg"
+          alt=""
+        />
+        <h2>Appartments</h2>
+      </div>
+    </div>
+
+    <!-- nine part -->
+
+    <div class="meta">
+      <div class="left">
+        <img src="./image/wooden-keychain-white.jpg" alt="" />
+      </div>
+
+      <div class="right">
+        <h1>Trusted By Best Exclusive Agents</h1>
+        <p>Sample text. Click to select the Text Element.</p>
+        <h2>Find excellent deals</h2>
+        <h2>Friendly host & Fast support</h2>
+        <h2>List your own property</h2>
+        <h6>Image from</h6>
+      </div>
+    </div>
+
+    <!-- logo patr -->
+
+    <div class="logo-wrap">
+      <img src="image/back.png" id="backbtn1" />
+      <div class="logo-part">
+        <span>
+          <img src="./image/black-logo-1.png" />
+        </span>
+        <span>
+          <img src="./image/black-logo-2_150.png" />
+        </span>
+        <span>
+          <img src="./image/black-logo-3.png" />
+        </span>
+        <span>
+          <img src="./image/black-logo-4.png" />
+        </span>
+        <span>
+          <img src="./image/black-logo-5.png" />
+        </span>
+        <span>
+          <img src="./image/black-logo-6.png" />
+        </span>
+        <span>
+          <img src="./image/black-logo-8_150.png" />
+        </span>
+        <img src="image/next.png" id="nextbtn1" />
+      </div>
+    </div>
+
+    <!-- left- right part -->
+
+    <div class="river">
+      <div class="left">
+        <img src="./image/house-isolated-field1.jpg" alt="" />
+      </div>
+
+      <div class="right">
+        <div class="top">
+          <h1>❞</h1>
+          <p>
+            Proin sed libero enim sed faucibus turpis. At imperdiet dui accumsan
+            sit amet nulla facilisi morbi tempus. Ut sem nulla pharetra diam sit
+            amet nisl. Enim nunc
+          </p>
+          <h2>Celia Almeda</h2>
+        </div>
+
+        <div class="bottom">
+          <h1>❞</h1>
+          <p>
+            Proin sed libero enim sed faucibus turpis. At imperdiet dui accumsan
+            sit amet nulla facilisi morbi tempus. Ut sem nulla pharetra diam sit
+            amet nisl. Enim nunc
+          </p>
+          <h2>Frank Kinney</h2>
+        </div>
+      </div>
+    </div>
+
+    <!-- last part -->
+
+    <div class="last">
+      <h1>Get Your Dream House</h1>
+      <p>Sample text. Click to select the Text Element.</p>
+
+      <form class="name" id="email-Form">
+        <label for="name">Name</label>
+        <input
+          type="text"
+          name="name"
+          id="name"
+          required
+          placeholder="Enter your Name"
+        />
+
+        <label for="email">Email</label>
+        <input
+          type="email"
+          name="email"
+          id="Email"
+          required
+          placeholder="Enter a valid email address"
+        />
+
+        <button type="submit">SUBMIT</button>
+        <p id="thankMessage" style="display: none">
+          Thank you! Your message has been sent.<button
+            type="button"
+            id="xback"
+          >
+            x
+          </button>
+        </p>
+      </form>
+    </div>
+
+    <div class="nine">
+      <h6>Sample text. Click to select the Text Element.</h6>
+      <p>This site was created with the <u>Nitesh</u></p>
+    </div>
+
+    <script src="./home..js"></script>
+  </body>
 </html>
