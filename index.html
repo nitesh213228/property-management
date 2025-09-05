@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Scroll Trigger Counter</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+    }
+
+    .spacer {
+      height: 100vh; /* Scroll karne ke liye upar space */
+      background-color: #eee;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .option {
+      display: flex;
+      background-color: #fbeced;
+      justify-content: center;
+      padding: 100px;
+      margin: 0 auto;
+    }
+
+    .body {
+      margin: 0 50px;
+      text-align: center;
+    }
+
+    .body h1 {
+      font-size: 50px;
+    }
+
+    .body p {
+      font-size: 20px;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="spacer">
+    <h2>Scroll Down to See Counter</h2>
+  </div>
+
+  <div class="option" id="counter-section">
+    <div class="body">
+      <h1 id="six">0k</h1>
+      <p>Award Winning</p>
+    </div>
+    <div class="body">
+      <h1 id="six1">0k</h1>
+      <p>Property Ready</p>
+    </div>
+    <div class="body">
+      <h1 id="six2">0m</h1>
+      <p>Happy Customer</p>
+    </div>
+  </div>
+
+  <div class="spacer"></div>
+
+  <script>
+    let hasAnimated = false;
+
+    function startCounting() {
+      const six = document.getElementById("six");
+      for (let i = 1; i <= 20; i++) {
+        setTimeout(() => {
+          six.innerHTML = i + "k";
+        }, i * 100);
+      }
+
+      const six1 = document.getElementById("six1");
+      for (let i = 1; i <= 14; i++) {
+        setTimeout(() => {
+          six1.innerHTML = i + "k";
+        }, i * 140);
+      }
+
+      const six2 = document.getElementById("six2");
+      for (let i = 0; i <= 2; i++) {
+        setTimeout(() => {
+          six2.innerHTML = i + "m";
+        }, i * 1000);
+      }
+    }
+
+    // Scroll-based trigger without IntersectionObserver
+    window.addEventListener("scroll", () => {
+      const section = document.getElementById("counter-section");
+      const position = section.getBoundingClientRect();
+
+      // Check if element is visible in viewport
+      if (position.top < window.innerHeight && position.bottom >= 0) {
+        if (!hasAnimated) {
+          startCounting();
+          // hasAnimated = false;
+        }
+      }
+    });
+  </script>
+
+</body>
+</html>

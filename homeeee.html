@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Counter Animation</title>
+    <style>
+      .option {
+        display: flex;
+        background-color: #fbeced;
+        justify-content: center;
+        padding: 100px;
+        margin-top: 50px;
+        height: 100vh; /* Ensuring full screen height */
+        align-items: center;
+      }
+
+      .body {
+        margin: 0 50px;
+        text-align: center;
+      }
+
+      .body h1 {
+        font-family: var(--ubuntu);
+        text-align: center;
+        font-size: 50px;
+      }
+
+      .body p {
+        font-family: var(--ubuntu);
+        font-size: 20px;
+        font-weight: bold;
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="option" id="counter-section">
+      <div class="body">
+        <h1 id="six"></h1>
+        <p>Award Winning</p>
+      </div>
+      <div class="body">
+        <h1 id="six1"></h1>
+        <p>Property Ready</p>
+      </div>
+      <div class="body">
+        <h1 id="six2"></h1>
+        <p>Happy Customer</p>
+      </div>
+    </div>
+
+    <script>
+      let hasAnimated = true;
+
+      function startCounting() {
+        const six = document.getElementById("six");
+        for (let i = 1; i <= 20; i++) {
+          setTimeout(() => {
+            six.innerHTML = i + "k";
+          }, i * 100);
+        }
+
+        const six1 = document.getElementById("six1");
+        for (let i = 1; i <= 14; i++) {
+          setTimeout(() => {
+            six1.innerHTML = i + "k";
+          }, i * 140);
+        }
+
+        const six2 = document.getElementById("six2");
+        for (let i = 0; i <= 2; i++) {
+          setTimeout(() => {
+            six2.innerHTML = i + "m";
+          }, i * 1000);
+        }
+      }
+
+      window.addEventListener("scroll", () => {
+        const section = document.getElementById("counter-section");
+        const position = section.getBoundingClientRect();
+
+        if (position.top < window.innerHeight && position.bottom >= 200) {
+          if (hasAnimated) {
+            startCounting();
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
